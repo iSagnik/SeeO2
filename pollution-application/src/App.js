@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles/App.css';
-import WeatherWidget from "./info/Weather.js"
+import WeatherWidget from "./info/Weather.js";
+import AirQuality from "./info/AirQuality.js";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
         </p>
       </header>
       <WeatherWidget />
+      <AirQuality />
     </div>
   );
 }
