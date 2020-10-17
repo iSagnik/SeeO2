@@ -1,37 +1,7 @@
+import React from "react"
 import "../styles/weather.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt, } from "@fortawesome/free-solid-svg-icons"
-import React, { useState, useEffect } from "react";
-import axios from "axios"
 
-const KEY = "e2a71bb47770ce392ca0d557f48055a0"
-
-
-const WeatherWidget = (props) => {
-    const [temp, setTemp] = useState(null)
-    const [humid, setHumid] = useState(null)
-    const [speed, setSpeed] = useState(null)
-    const [precip, setCloud] = useState(null)
-    const [desc, setDesc] = useState(null)
-
-    const fetch = async () => {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.City}&appid=${KEY}&units=metric`
-        console.log(url)
-        const request = axios.get(url)
-        const response = await request
-
-        setTemp(response.data.main.temp)
-        setHumid(response.data.main.humidity)
-        setSpeed(response.data.wind.speed) 
-        setCloud(response.data.clouds.all)
-        setDesc(response.data.weather[0].description)
-    }   
-
-    useEffect(() => {
-        fetch()
-
-    }, [])
-    
+const WeatherUI = (props) => {
     return (
         <div class="container">
             <div class="weather-side">
@@ -42,20 +12,20 @@ const WeatherWidget = (props) => {
                     <span class="location">{props.City}</span></div>
                 <div class="weather-container">
                     <i class="weather-icon" data-feather="sun"></i>
-                    <h3 class="weather-temp">{temp}°C</h3>
-                    <h3 class="weather-desc">{desc}</h3>
+                    <h1 class="weather-temp">{props.weather.temp}°C</h1>
+                    <h3 class="weather-desc">Sunny</h3>
                 </div>
             </div>
             <div class="info-side">
                 <div class="today-info-container">
                     <div class="today-info">
-                        <div class="precipitation"> <span class="title">PRECIPITATION</span><span class="value">{precip} %</span>
+                        <div class="precipitation"> <span class="title">PRECIPITATION</span><span class="value">{props.Precip} %</span>
                             <div class="clear"></div>
                         </div>
-                        <div class="humidity"> <span class="title">HUMIDITY</span><span class="value">{humid} %</span>
+                        <div class="humidity"> <span class="title">HUMIDITY</span><span class="value">{props.Humid} %</span>
                             <div class="clear"></div>
                         </div>
-                        <div class="wind"> <span class="title">WIND</span><span class="value">{speed} km/h</span>
+                        <div class="wind"> <span class="title">WIND</span><span class="value">{props.Wind} km/h</span>
                             <div class="clear"></div>
                         </div>
                     </div>
@@ -78,6 +48,6 @@ const WeatherWidget = (props) => {
             </div>
         </div>
     )
-}
+} 
 
-export default WeatherWidget
+export default WeatherUI

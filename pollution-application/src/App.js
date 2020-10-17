@@ -12,10 +12,7 @@ function App() {
         </header>
             <WeatherWidget 
                 Date = "15 Jan 2019" 
-                City = "Raleigh" 
-                Precip = "10"
-                Temperature = "18" 
-                Humid = "36"
+                City = "Raleigh"
             />
     </div>
   );
