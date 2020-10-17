@@ -4,6 +4,7 @@ import WeatherWidget from "./info/Weather.js";
 import AirQuality from "./info/AirQuality.js";
 
 
+
 function App() {
   return (
     <div className="App">
@@ -12,8 +13,13 @@ function App() {
           Welcome to Polution Tracking!
         </p>
       </header>
-      <WeatherWidget />
-      <AirQuality />
+      <WeatherWidget
+        Date="15 Jan 2019"
+        City="Raleigh"
+        Precip="10"
+        Temperature="18"
+        Humid="36"
+      />
     </div>
   );
 }
