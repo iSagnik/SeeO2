@@ -10,44 +10,48 @@
 
 
 import React, { Component } from "react";
-import { render } from 'react-dom';
 
-export class AirQuality extends Component {
-    constructor(_city, _state, _country) {
+class AirQuality extends Component {
+    constructor(props) {
         super();
-        this.state = {
-            city: _city,
-            state: _state,
-            country: _country,
+        this.AQIState = {
+            city: props.location.city,
+            state: props.location.state,
+            country: props.location.country,
             coordinates: [],
             forecasts: [],
             current: {},
             history: {},
             units: {}
         }
-        const urlExternalAPI = "https://api.airvisual.com/v2/city?";
-        const key = "c3bf73d7-87e0-4ea5-adbc-19ad236a47f7";
+        
+        this.urlExternalAPI = "https://api.airvisual.com/v2/city?city=";
+        this.key = "c3bf73d7-87e0-4ea5-adbc-19ad236a47f7";
     }
 
     invokeAPI() {
         // get info from API
-        fetch({ urlExternalAPI } + { city } + "&state=" + { state } + "&country=" + { country } + "&key=" + { key })
+        fetch(`https://api.airvisual.com/v2/city?city=${this.AQIState.city}&state=${this.AQIState.state}&country=${this.AQIState.country}&key=${this.key}`)
             .then(response => response.json())
-            .then(obj => console.log(obj.data.location.coordinates));
-        // .then(obj => {
-        //     this.setState({
-        //         coordinates: obj.data.location.coordinates,
-        //         forecasts: obj.data.forecasts,
-        //         current: obj.data.current,
-        //         history: obj.history,
-        //         units: obj.units
-        //     })
-        // });
+            //.then(obj => console.log(obj.data.location.coordinates));
+        .then(obj => {
+            this.setState({
+                coordinates: obj.data.location.coordinates,
+                forecasts: obj.data.forecasts,
+                current: obj.data.current,
+                history: obj.history,
+                units: obj.units
+            })
+        });
     }
 
     render() {
-        // RETURN HTML 
+        // RETURN HTML
+        this.invokeAPI();
+    return <p>Hi!{this.AQIState.coordinates}</p> 
     }
 
 
 }
+
+export default AirQuality;
