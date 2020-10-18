@@ -12,7 +12,7 @@ function App() {
         </header>
             <WeatherWidget 
                 Date = "15 Jan 2019" 
-                City = "Raleigh"
+                City = "London"
             />
     </div>
   );
