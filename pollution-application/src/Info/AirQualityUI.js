@@ -4,7 +4,7 @@ import "../styles/airQuality.css";
 import Context from "../Context"
 
 function AirQualityUI () {
-    const {NO2, PM10, PM25, CO, SO2, Ozone, AQI, pollutant} = useContext(Context)
+    const {NO2, PM10, PM25, CO, SO2, Ozone, AQI} = useContext(Context)
 
     const arr = ['#BEE554', '#ffdb4a', '#ff7424', '#f54d3d', '#6b5491', '#0c0021'];
 
@@ -96,6 +96,9 @@ function AirQualityUI () {
                             animate={true}
                             startAngle={50}
                         />
+                    </div>
+                    <div className="mainp-container">
+                        <h2 className="main-pol-title">Air Quality Index: {AQI}</h2>
                     </div>
                 </div>
             </div>
