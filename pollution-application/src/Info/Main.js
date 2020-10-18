@@ -77,7 +77,7 @@ const Main = (props) => {
 
 
         //set data for AQI widget
-        const headers = { 'x-api-key': 'qaP2uyLEPz2whhzI3X32o9X0aCdwlhWq90UzMWLl' };
+        const headers = { 'x-api-key': '7Qiw7LSZ9D6NIGhYrm9O4209g6XNd9XQ8ceFoywf' };
         const urlA = `https://api.ambeedata.com/latest/by-city?city=${loca}`
         const request2 = await axios.get(urlA, { headers })
         const response2 = await request2

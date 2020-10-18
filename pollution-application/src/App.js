@@ -9,6 +9,7 @@ function App() {
   var now = moment().format("MMM Do YYYY");
   return (
     <div className="App">
+        <h1>SEE O2</h1>
         <Main
             Date = {now}
             City = "London"
