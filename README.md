@@ -21,9 +21,9 @@ We accomplished a web application that successfully tracks and projects the air 
 All of our team members agree that we all want to continue refining our product. The future of SeeO2 can see a lot more than just India, we would like to expand it to other Third World countries as well as show even more data on particulate matter and not just the air quality index. Also, we would like to add more features. For example, incorporating a map visual or giving travel recommendations for the safes route depending on AQI.
 
 ### Presentation
-![Image of Slide1](https://github.com/narmis99/HackNC2020/slide1)
-![Image of Slide2](https://github.com/narmis99/HackNC2020/slide2)
-![Image of Slide3](https://github.com/narmis99/HackNC2020/slide3)
-![Image of Slide4](https://github.com/narmis99/HackNC2020/slide4)
-![Image of Slide5](https://github.com/narmis99/HackNC2020/slide5)
-![Image of Slide6](https://github.com/narmis99/HackNC2020/slide6)
+![Image of Slide1](https://github.com/narmis99/HackNC2020/Slide1.JPG)
+![Image of Slide2](https://github.com/narmis99/HackNC2020/Slide2.JPG)
+![Image of Slide3](https://github.com/narmis99/HackNC2020/Slide3.JPG)
+![Image of Slide4](https://github.com/narmis99/HackNC2020/Slide4.JPG)
+![Image of Slide5](https://github.com/narmis99/HackNC2020/Slide5.JPG)
+![Image of Slide6](https://github.com/narmis99/HackNC2020/Slide6.JPG)
