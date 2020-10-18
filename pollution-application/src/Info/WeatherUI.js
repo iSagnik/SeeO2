@@ -16,7 +16,7 @@ const WeatherUI = () => {
                     <span className="location">{location}</span></div>
                 <div className="weather-container">
                     <i className="weather-icon" data-feather="sun"></i>
-                    <h3 className="weather-temp">{temp}°C</h3>
+                    <h4 className="weather-temp">{temp}°C</h4>
                     <h3 className="weather-desc">{desc}</h3>
                 </div>
             </div>
