@@ -3,10 +3,14 @@
      --gradient: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
      --gradient2: linear-gradient(135deg, #222831 10%, #222831 100%);
 }
+
  .container1 {
      padding-top: 55px;
      font-family: 'Montserrat', sans-serif;
-     margin: 0 auto;
+	 margin: 0 auto;
+	 display: flex;            /* added for centering*/
+	 justify-content: center;  /* added for centering*/
+	 align-items: center;      /* added for centering*/
 }
 
  .grid-1-5 {

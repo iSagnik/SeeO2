@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/App.css';
 import Main from "./Info/Main"
-import Tips from "./Tips"
+import Tips from "./tips"
 import moment from 'moment'; 
 
 
