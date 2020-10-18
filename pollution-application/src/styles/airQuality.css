@@ -1,0 +1,366 @@
+body {
+    font-family: 'pt sans';
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /*
+  =================
+  Circle Graph using (https://github.com/rendro/easy-pie-chart)
+  ================
+  */
+  .circle-graph p {
+      text-align: center;
+    padding: 55px;
+    z-index: 100;
+  } 
+  
+  .graph-one {
+    height: 300px; /* set height for postioning */
+  }
+  
+  circle-graph-container {
+    position: relative;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 120px;
+  }
+  
+  .circle-graph {
+      margin: 20px;
+    float: left;
+  }
+  .html {
+    width: 85%;
+    background-color: #a378aa;
+    animation: slide-left 0.9s ease-in-out 1s both;
+    -webkit-animation: slide-left 0.9s ease-in-out 1s both;
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+  }
+  
+  .css {
+    width: 80%;
+    background-color: #a378aa;
+    animation: slide-left 1s ease-in-out 1s both;
+   -webkit-animation: slide-left 1s ease-in-out 1s both;
+     animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+  }
+  
+  .js {
+    width: 60%;
+    background-color: #a378aa;
+    animation: slide-left 1s ease-in-out 1s both;
+    -webkit-animation: slide-left 1s ease-in-out 1s both;
+     animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+:root {
+	--gradient: linear-gradient( 250deg, #ffffff 10%, #5151E5 100%);
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	line-height: 1.25em;
+}
+.intensity {
+	display:table;
+	margin:0 auto;
+}
+
+.inactive {
+	clear: both;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #343d4b;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.container {
+	border-radius: 25px;
+	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	height: 400px;
+}
+
+.aqi-side {
+	position: relative;
+	height: 100%;
+	border-radius: 25px;
+	background-image: url("https://assets.nrdc.org/sites/default/files/styles/header_background/public/health4_26_airpollguide_istock_2796602_900x600px.jpg?itok=vCwn8tgz");
+	width: 300px;
+	-webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: -webkit-transform 300ms ease;
+	transition: -webkit-transform 300ms ease;
+	-o-transition: transform 300ms ease;
+	transition: transform 300ms ease;
+	transition: transform 300ms ease, -webkit-transform 300ms ease;
+	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+	        transform: translateZ(0) scale(1.02) perspective(1000px);
+	float: left;
+}
+
+.aqi-side:hover {
+	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.aqi-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: var(--gradient);
+	border-radius: 25px;
+	opacity: 0.8;
+}
+
+.mainp-container {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+}
+
+.main-pol-title {
+	margin: 0;
+}
+
+.main-pol {
+	display: block;
+}
+
+.a-container {
+	position: absolute;
+	bottom: 25px;
+	left: 25px;
+}
+
+.intensity-side {
+	position: relative;
+	float: left;
+	height: 100%;
+	padding-top: 25px;
+}
+
+.intensity-info {
+	padding: 15px;
+	margin: 0 25px 25px 25px;
+/* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+	border-radius: 10px;
+}
+
+.intensity-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.intensity-info>div .title {
+	float: left;
+	font-weight: 700;
+}
+
+.intensity-info>div .value {
+	float: right;
+}
+
+.pm-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 10px 35px;
+	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.pm-list>li {
+	float: left;
+	width: 100px;
+	padding: 15px;
+	cursor: pointer;
+	-webkit-transition: 200ms ease;
+	-o-transition: 200ms ease;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.pm-list>li:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.pm-list>li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+}
+
+.pm-list>li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.pm-list>li .day-icon {
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.pm-list>li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+
+
+
+
+/*********************************************/
+
+.gauge {
+    padding-bottom: 50%;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+}
+.gauge:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #cccccc;
+}
+.gauge:after {
+    content: '';
+    background: #eeeeee;
+    position: absolute;
+    top: 60%;
+    right: 30%;
+    bottom: -40%;
+    left: 30%;
+    border-radius: 50%;
+}
+.gauge__meter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform-origin: center bottom;
+}
+
+.gauge__meter--10 {
+    animation: gauge-rotate-10 1s forwards;
+}
+.gauge__meter--10:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #8d8d8d;
+}
+
+.gauge__meter--25 {
+    animation: gauge-rotate-25 1s forwards;
+}
+.gauge__meter--25:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #de2f31;
+}
+.gauge__meter--50 {
+    animation: gauge-rotate-50 1s forwards;
+}
+.gauge__meter--50:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #de5c2f;
+}
+
+.gauge__meter--75 {
+    animation: gauge-rotate-75 1s forwards;
+}
+.gauge__meter--75:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #e5a147;
+}
+
+.gauge__meter--75 {
+    animation: gauge-rotate-75 1s forwards;
+}
+.gauge__meter--75:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #41b565;
+}
+.gauge__meter--90 {
+    animation: gauge-rotate-90 1s forwards;
+}
+.gauge__meter--90:before {
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    border-radius: 50%;
+    background-color: #41b565;
+}
+.row {
+    width: 30%;
+    margin: 1%;
+    display: inline-block;
+}
+body {
+    width: 80%;
+    margin: 10px auto;
+    background: #eeeeee;
+}
+
+

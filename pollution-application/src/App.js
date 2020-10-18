@@ -20,7 +20,7 @@ function App() {
         Temperature="18"
         Humid="36"
       /> */}
-    <AirQuality location={{city: "Los Angeles", state: "California", country: "USA"}}/>
+    <AirQuality city="Raleigh"/>
     </div>
   );
 }
