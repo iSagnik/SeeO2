@@ -11,7 +11,7 @@ const WeatherUI = () => {
             <div className="weather-side">
                 <div className="weather-gradient"></div>
                 <div className="date-container">
-                    <h2 className="date-dayname">Tuesday</h2><span className="date-day">{Date}</span>
+                    <span className="date-day">{Date}</span><h2 className="date-dayname">Tuesday</h2>
                     <span className="logo"><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
                     <span className="location">{location}</span></div>
                 <div className="weather-container">
@@ -32,6 +32,7 @@ const WeatherUI = () => {
                         <div className="wind"> <span className="title">WIND</span><span className="value">{speed} km/h</span>
                             <div className="clear"></div>
                         </div>
+                        <span className="value">Current Weather</span>
                     </div>
                 </div>
             </div>
