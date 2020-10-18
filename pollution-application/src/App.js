@@ -1,16 +1,18 @@
 import React from 'react';
 import './styles/App.css';
-import WeatherWidget from "./Info/Weather"
-import Search from "./Search"
+import Main from "./Info/Main"
+import Tips from "./Tips"
+import moment from 'moment'; 
+
 
 function App() {
+  var now = moment().format("MMM Do YYYY");
   return (
     <div className="App">
-        <WeatherWidget 
-            Date = "17 Oct 2019" 
-            City = "Delhi"
+        <Main
+            Date = {now} 
         />
-        <Search />
+        <Tips aqi = "160" tip1 = "Stay Indoors" tip2 = "Wear a Mask" tip3 = "Keep Activity Level Low" tip4 = "Use an Air Filter" />
     </div>
   );
 }

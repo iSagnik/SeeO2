@@ -1,0 +1,85 @@
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+ :root {
+     --gradient: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+     --gradient2: linear-gradient(135deg, #222831 10%, #222831 100%);
+}
+ .container1 {
+     padding-top: 55px;
+     font-family: 'Montserrat', sans-serif;
+     margin: 0 auto;
+}
+
+ .grid-1-5 {
+     border-radius: 22px;
+     background-image: var(--gradient2);
+	 min-height: 300px;
+	 padding: 1.25em;
+	 padding-right: 35px;
+	 position: relative;
+	 text-align: center;
+	 transition: all 0.2s ease-in-out;
+}
+
+.logo-tips {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+}
+ @media screen and (min-width: 700px) {
+	 .grid-1-5 {
+		 float: left;
+		 width: 50%;
+	}
+	 .grid-1-5:nth-child(odd) {
+		 clear: left;
+	}
+}
+ @media screen and (min-width: 800px) {
+	 .grid-1-5 {
+		 width: 33.3333333%;
+	}
+	 .grid-1-5:nth-child(3n+1) {
+		 clear: left;
+	}
+	 .grid-1-5:nth-child(odd) {
+		 clear: none;
+	}
+}
+ @media screen and (min-width: 1120px) {
+	 .grid-1-5 {
+		 width: 20%;
+	}
+	 .grid-1-5:nth-child(odd), .grid-1-5:nth-child(3n+1) {
+		 clear: none;
+	}
+}
+ .grid-1-5:hover {
+    border-radius: 22px;
+     background-image: var(--gradient);
+	 box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 1);
+	 transform: scale(1.025);
+	 z-index: 2;
+}
+ .grid-1-5:hover:before, .grid-1-5:hover:after {
+    border-radius: 22px;
+    background-image: var(--gradient);  
+	 content: "";
+	 position: absolute;
+	 top: -2px;
+	 bottom: -2px;
+	 width: 2px;
+}
+ .grid-1-5:hover:before {
+	 left: -2px;
+}
+ .grid-1-5:hover:after {
+	 right: -2px;
+}
+ h3 {
+	 font-size: 1.5em;
+	 letter-spacing: 0.0625em;
+	 margin: 0 0 0.3333333333em;
+}
+ p {
+	 font-size: 0.875em;
+}
