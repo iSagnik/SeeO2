@@ -133,7 +133,9 @@
 
 .today-info>div .title {
 	float: left;
-	font-weight: 700;
+    font-weight: 700;
+    padding-bottom: 45px;
+    padding-right: 20px;
 }
 
 .today-info>div .value {
@@ -142,12 +144,4 @@
 
 .logo {
     padding-right: 6px;
-}
-
-.Aqi-container {
-    padding-top: 25px;
-}
-
-.AQI {
-    color: brown;
 }

@@ -10,7 +10,8 @@ function App() {
   return (
     <div className="App">
         <Main
-            Date = {now} 
+            Date = {now}
+            City = "London"
         />
         <Tips aqi = "160" tip1 = "Stay Indoors" tip2 = "Wear a Mask" tip3 = "Keep Activity Level Low" tip4 = "Use an Air Filter" />
     </div>

@@ -18,7 +18,8 @@ const Main = (props) => {
 
     const fetch = async (e) => {
         e.preventDefault()
-        const loca = e.target.elements.location.value
+        var loca = props.City
+        e ? loca = e.target.elements.location.value: //pass
         setLoc(loca)
         const urlW = `https://api.openweathermap.org/data/2.5/weather?q=${loca}&appid=${KEY}&units=metric`
         console.log(urlW)
@@ -32,13 +33,12 @@ const Main = (props) => {
         setCloud(response.data.clouds.all)
         setDesc(response.data.weather[0].description)
     }   
-    
     return (
         <div className="Weather-Content">
             <Context.Provider value = {{ apiCall: fetch, location, Date: props.Date, temp, humid, speed, precip, desc}}>
                 { 
                 resp ?
-                <WeatherUI /> :
+                <WeatherUI /> : 
                 <WeatherUI 
                 />
                 }

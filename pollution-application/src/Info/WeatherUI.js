@@ -34,12 +34,6 @@ const WeatherUI = () => {
                         </div>
                     </div>
                 </div>
-                <div className="Aqi-container">
-                    <h2>AQI LEVEL</h2>
-                    <h1 className = "AQI" >196</h1>
-                    <h5>Unhealthy</h5>
-
-                </div>
             </div>
         </div>
     )
