@@ -95,61 +95,66 @@ class AirQuality extends Component {
 
         $(".a-container").append(gauge);*/
 
-        const widget = (<div className="container">
-        <div class="intensity-side">
-            <div class="today-info-container">
-                <div class="intensity-info"> 
-                    <h2 class="intensity title">Intensity: ${}</h2>
+        const widget = (
+        <div className="container">
+            <div class="intensity-side">
+                <div class="today-info-container">
+                    <div class="intensity-info"> 
+                        <h2 class="intensity title">Intensity: ${}</h2>
+                    </div>
+                </div>
+                <div class="week-container">
+                    <ul class="pm-list">
+                    <li class="clear">
+                                <span class="day-name">PM 10</span>
+                                <span class="day-temp">${this.state.PM10}</span>
+                            </li>
+                            <li>
+                                <span class="day-name">PM 2.5</span>
+                                <span class="day-temp">${this.state.PM25}</span>
+                            </li>
+                    <div class="clear"></div>
+                    </ul>
+                        <ul class="pm-list">
+                    <li class="clear">
+                                <span class="day-name">NO2</span>
+                                <span class="day-temp">${this.state.NO2}</span>
+                            </li>
+                        
+                            <li>
+                                <span class="day-name">SO2</span>
+                                <span class="day-temp">${this.state.SO2}</span>
+                            </li>
+                    <div class="clear"></div>
+                    </ul>
+                    <ul class="pm-list">
+                            <li class="clear">
+                                <span class="day-name">CO</span>
+                                <span class="day-temp">${this.state.CO}</span>
+                            </li>
+                        
+                            <li>
+                                <span class="day-name">O3</span>
+                                <span class="day-temp">${this.state.OZONE}</span>
+                            </li>
+                    <div class="clear"></div>
+                    </ul>
                 </div>
             </div>
-            <div class="week-container">
-                <ul class="pm-list">
-                   <li class="clear">
-                            <span class="day-name">PM 10</span>
-                            <span class="day-temp">${this.state.PM10}</span>
-                        </li>
-                        <li>
-                            <span class="day-name">PM 2.5</span>
-                            <span class="day-temp">${this.state.PM25}</span>
-                        </li>
-                   <div class="clear"></div>
-                  </ul>
-                    <ul class="pm-list">
-                   <li class="clear">
-                            <span class="day-name">NO2</span>
-                            <span class="day-temp">${this.state.NO2}</span>
-                        </li>
-                    
-                        <li>
-                            <span class="day-name">SO2</span>
-                            <span class="day-temp">${this.state.SO2}</span>
-                        </li>
-                  <div class="clear"></div>
-                </ul>
-                  <ul class="pm-list">
-                   <li class="clear">
-                            <span class="day-name">CO</span>
-                            <span class="day-temp">${this.state.CO}</span>
-                        </li>
-                    
-                        <li>
-                            <span class="day-name">O3</span>
-                            <span class="day-temp">${this.state.OZONE}</span>
-                        </li>
-                  <div class="clear"></div>
-                </ul>
-            </div>
-        </div>
-        <div class="aqi-side">
-            <div class="aqi-gradient"></div>
-            <div class="a-container">
-            </div>
-            <div class="mainp-container">
-                <h2 class="main-pol-title">Main Pollutant:</h2>
-                <span class="main-pol">${this.state.aqiInfo}</span>
-            </div>
-        </div>
-    </div>);
+            <div class="aqi-side">
+                <div class="aqi-gradient"></div>
+                    <div class="a-container">
+                        <PieChart
+                        data={[
+                            { title: 'F', value: 10, color: '#FFFFFF' },
+                            { title: 'Zero', value: 15, color: '#000000' }]}/>;
+                    </div>
+                    <div class="mainp-container">
+                        <h2 class="main-pol-title">Main Pollutant:</h2>
+                        <span class="main-pol">${this.state.aqiInfo}</span>
+                    </div>
+                </div>
+            </div>);
     
     return widget;
     }
