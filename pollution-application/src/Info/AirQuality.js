@@ -11,9 +11,7 @@
 
 import React, { Component } from "react";
 import { PieChart } from "react-minimal-pie-chart";
-import $ from "jquery";
 import "../styles/airQuality.css";
-import BG from "../images/background.jpg";
 
 class AirQuality extends Component {
     constructor(props) {
@@ -21,14 +19,14 @@ class AirQuality extends Component {
         this.city = props.city;
         this.state = {
             city: this.city,
-            NO2: 0,
-            PM10: 0,
-            PM25: 0,
-            CO: 0,
-            SO2: 0,
-            OZONE: 0,
-            AQI: 0,
-            aqiInfo: 0 
+            NO2: 3,
+            PM10: 4.79,
+            PM25: 11.08,
+            CO: 0.15,
+            SO2: 5.1,
+            OZONE: 18,
+            AQI: 40,
+            pollutant: "O3"
             
         }
 
@@ -36,8 +34,9 @@ class AirQuality extends Component {
 
     invokeAPI() {
 
-        const headers = { 'x-api-key': 'qaP2uyLEPz2whhzI3X32o9X0aCdwlhWq90UzMWLl' };
-        fetch(`https://api.ambeedata.com/latest/by-city?city=${this.city}`, { headers })
+        //const headers = { 'x-api-key': 'qaP2uyLEPz2whhzI3X32o9X0aCdwlhWq90UzMWLl' };
+        //fetch(`https://api.ambeedata.com/latest/by-city?city=${this.city}`, { headers })
+        fetch(`https://api.ambeedata.com/latest/by-city?city=${this.city}`)    
             .then(response => response.json())
             .then(obj => {
                 this.setState({
@@ -49,27 +48,25 @@ class AirQuality extends Component {
                     SO2: obj.stations[0].SO2,
                     OZONE: obj.stations[0].OZONE,
                     AQI: obj.stations[0].AQI,
-                    aqiInfo: obj.stations[0].aqiInfo
+                    pollutant: obj.stations[0].aqiInfo.pollutant
                 }, function() { console.log(this.state);})
             });
     }
 
     render() {
         // RETURN HTML
-        this.invokeAPI();
-
         console.log(this.state);
 
         // Good (1-50) #BEE554	
-        // Moderate (50-100) #ffdb4a	
-        // Unhealthy for Sensitive Groups (100-150) #ff7424
-        // Unhealthy (150-200) #f54d3d
+        // ve Groups (100-150) #ff7424
+        // Unhealthy (150-2Moderate (50-100) #ffdb4a	
+        // Unhealthy for Sensiti00) #f54d3d
         // Very Unhealthy (200-250) #6b5491
         // Hazardous (250+) #0c0021
 
         const aqi = this.state.AQI;
         const arr = ['#BEE554', '#ffdb4a', '#ff7424', '#f54d3d', '#6b5491', '#0c0021'];
-        
+
         let color = "";
         let intensity = "";
 
@@ -150,21 +147,25 @@ class AirQuality extends Component {
                 </div>
                 <div className="aqi-side">
                     <div className="aqi-gradient"></div>
-                    <div className="a-container">
-                        <PieChart
-                            data = {data}
-                            lineWidth={35}
-                            totalValue={225}
-                            label={(data) => data.value}
-                            className="pie-chart"
-                            labelPosition={50}
-                            animate={true}
-                            startAngle={50}
-                        />
-                    </div>
-                    <div className="mainp-container">
-                    <h2 className="main-pol-title">Air Quality Index:{this.state.AQI}</h2>
-                        <h2 className="main-pol-title">Main Pollutant:{this.state.aqiInfo.pollutant}</h2>
+                    <div className="flex-container">
+                        <div className = "top-container">
+                            <h5 className="aqi-title">Air Quality Index</h5>
+                            <h2 className="aqi">{this.state.AQI}</h2>
+                        </div>
+                        <div className="a-container">
+                            <PieChart
+                                data = {data}
+                                lineWidth={35}
+                                totalValue={225}
+                                label={(data) => data.value}
+                                className="pie-chart"
+                                labelPosition={50}
+                                animate={true}
+                                startAngle={50}/>
+                        </div>
+                        <div className="mainp-container">
+                            <h2 className="main-pol-title">Main Pollutant: {this.state.pollutant}</h2>
+                        </div>
                     </div>
                 </div>
             </div>);

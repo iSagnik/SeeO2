@@ -140,18 +140,22 @@ body {
 	opacity: 0.8;
 }
 
+.flex-container {
+    position: flex;
+    display:flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.top-container {
+    text-align: center;
+    margin: 10px;
+}
 .mainp-container {
-	position: absolute;
+    position: absolute;
 	bottom: 25px;
-	left: 25px;
-}
-
-.main-pol-title {
-	margin: 0;
-}
-
-.main-pol {
-	display: block;
+    left: 25px;
+    text-align: center;
 }
 
 .a-container {
@@ -161,6 +165,27 @@ body {
     position: absolute;
     top: 0;
     right: 0;    
+}
+
+.aqi {
+    position: absolute;
+    left: 110px;
+    font-size: 60px;
+    top: 110px;
+    color: black;
+}
+
+.main-pol-title {
+    margin: 0;
+    size: 12px;
+}
+
+.aqi-title {
+    color:black;
+}
+
+.main-pol {
+	display: block;
 }
 
 .pie-chart {
