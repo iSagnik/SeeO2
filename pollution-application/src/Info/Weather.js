@@ -38,7 +38,7 @@ const WeatherWidget = (props) => {
                 <div class="weather-gradient"></div>
                 <div class="date-container">
                     <h2 class="date-dayname">Tuesday</h2><span class="date-day">{props.Date}</span>
-                    <span><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
+                    <span className="logo"><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
                     <span class="location">{props.City}</span></div>
                 <div class="weather-container">
                     <i class="weather-icon" data-feather="sun"></i>
@@ -71,7 +71,7 @@ const WeatherWidget = (props) => {
                 </div> */}
                 <div class="location-container">
                     <button class="location-button">
-                        <span><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
+                        <span className="logo"><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
                         <span>   Change location</span>
                     </button>
                 </div>
