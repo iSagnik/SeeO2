@@ -30,10 +30,19 @@ const Main = (props) => {
     const [AQI, setAQI] = useState(null)
     const [pollutant, setP] = useState(null)
 
+    const fetchAPI = async e => {
+        e.preventDefault()
+        const dates = e.target.elements.dates.value
+        console.log("dates: "  + dates)
+
+    }
     const fetchW = async (e) => {
         e.preventDefault()
         const loca = e.target.elements.location.value
         setLoc(loca)
+        console.log(e)
+
+            
         const urlW = `https://api.openweathermap.org/data/2.5/weather?q=${loca}&appid=${KEY}&units=metric`
         //console.log(urlW)
         const request = axios.get(urlW)
@@ -65,12 +74,14 @@ const Main = (props) => {
             setAQI(response2.data.stations[0].AQI)
             setP(response2.data.stations[0].aqiInfo.pollutant)
         }
+       // }
+        
     }   
 
     return (
         <div className="Weather-Content">
             <Context.Provider value = {
-                { apiCallW: fetchW, location, Date: props.Date, 
+                { apiCallW: fetchW, aqiAPI: fetchAPI,location, Date: props.Date, 
                     temp, humid, speed, precip, desc, NO2, PM10, PM25,
                     CO, SO2, Ozone, AQI, pollutant            
                 }
