@@ -1,7 +1,4 @@
-body {
-    font-family: 'pt sans';
-  }
-  
+ 
   .container {
     width: 80%;
     margin: 0 auto;
@@ -99,20 +96,20 @@ body {
 	        justify-content: center;
 }
 
-.container {
+.my-container {
 	border-radius: 25px;
 	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
 	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
 	background-color: #222831;
 	color: #ffffff;
-	height: 400px;
+    height: 400px;
+    max-width: 1200px;
 }
 
 .aqi-side {
 	position: relative;
 	height: 100%;
 	border-radius: 25px;
-	background-image: url("https://assets.nrdc.org/sites/default/files/styles/header_background/public/health4_26_airpollguide_istock_2796602_900x600px.jpg?itok=vCwn8tgz");
 	width: 300px;
 	-webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
 	        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
@@ -123,7 +120,8 @@ body {
 	transition: transform 300ms ease, -webkit-transform 300ms ease;
 	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
 	        transform: translateZ(0) scale(1.02) perspective(1000px);
-	float: left;
+	float: right;
+	background-image: url("https://assets.nrdc.org/sites/default/files/styles/header_background/public/health4_26_airpollguide_istock_2796602_900x600px.jpg?itok=vCwn8tgz");
 }
 
 .aqi-side:hover {
@@ -157,9 +155,17 @@ body {
 }
 
 .a-container {
-	position: absolute;
-	bottom: 25px;
-	left: 25px;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;    
+}
+
+.pie-chart {
+    position: relative;
+    width: 200px;
 }
 
 .intensity-side {
@@ -245,122 +251,5 @@ body {
 	font-weight: 700;
 }
 
-
-
-
-/*********************************************/
-
-.gauge {
-    padding-bottom: 50%;
-    position: relative;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-}
-.gauge:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #cccccc;
-}
-.gauge:after {
-    content: '';
-    background: #eeeeee;
-    position: absolute;
-    top: 60%;
-    right: 30%;
-    bottom: -40%;
-    left: 30%;
-    border-radius: 50%;
-}
-.gauge__meter {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform-origin: center bottom;
-}
-
-.gauge__meter--10 {
-    animation: gauge-rotate-10 1s forwards;
-}
-.gauge__meter--10:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #8d8d8d;
-}
-
-.gauge__meter--25 {
-    animation: gauge-rotate-25 1s forwards;
-}
-.gauge__meter--25:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #de2f31;
-}
-.gauge__meter--50 {
-    animation: gauge-rotate-50 1s forwards;
-}
-.gauge__meter--50:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #de5c2f;
-}
-
-.gauge__meter--75 {
-    animation: gauge-rotate-75 1s forwards;
-}
-.gauge__meter--75:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #e5a147;
-}
-
-.gauge__meter--75 {
-    animation: gauge-rotate-75 1s forwards;
-}
-.gauge__meter--75:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #41b565;
-}
-.gauge__meter--90 {
-    animation: gauge-rotate-90 1s forwards;
-}
-.gauge__meter--90:before {
-    content: '';
-    position: absolute;
-    height: 200%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: #41b565;
-}
-.row {
-    width: 30%;
-    margin: 1%;
-    display: inline-block;
-}
-body {
-    width: 80%;
-    margin: 10px auto;
-    background: #eeeeee;
-}
 
 
