@@ -98,8 +98,8 @@ function AirQualityUI () {
                         />
                     </div>
                     <div className="mainp-container">
-                    <h2 className="main-pol-title">Air Quality Index:{AQI}</h2>
-                        <h2 className="main-pol-title">Main Pollutant:{pollutant}</h2>
+                    <h2 className="main-pol-title">Air Quality Index: {AQI}</h2>
+                        <h2 className="main-pol-title">Main Pollutant: {pollutant}</h2>
                     </div>
                 </div>
             </div>
