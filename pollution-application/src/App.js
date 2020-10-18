@@ -6,14 +6,9 @@ import Search from "./Search"
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Welcome to Polution Tracking!
-        </p>
-        </header>
         <WeatherWidget 
-            Date = "15 Jan 2019" 
-            City = "London"
+            Date = "17 Oct 2019" 
+            City = "Delhi"
         />
         <Search />
     </div>

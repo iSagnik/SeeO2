@@ -60,20 +60,11 @@ const WeatherWidget = (props) => {
                         </div>
                     </div>
                 </div>
-                {/* <div class="week-container">
-                    <ul class="week-list">
-                        <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp">29°C</span></li>
-                        <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span class="day-temp">21°C</span></li>
-                        <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span class="day-temp">08°C</span></li>
-                        <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span class="day-temp">19°C</span></li>
-                        <div class="clear"></div>
-                    </ul>
-                </div> */}
-                <div class="location-container">
-                    <button class="location-button">
-                        <span className="logo"><FontAwesomeIcon icon = {faMapMarkerAlt} size = "1x" /></span>
-                        <span>   Change location</span>
-                    </button>
+                <div class="Aqi-container">
+                    <h2>AQI LEVEL</h2>
+                    <h1 className = "AQI" >196</h1>
+                    <h5>Unhealthy</h5>
+
                 </div>
             </div>
         </div>

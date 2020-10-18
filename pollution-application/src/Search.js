@@ -7,8 +7,8 @@ const Search = () => {
     <div className="container-search">
         <div className="container__item">
             <form className="form">
-                <input type="text" className="form__field" placeholder="Seatch City" />
-                <button type="button" className="btn btn--primary btn--inside uppercase">Send</button>
+                <input type="text" className="form__field" placeholder="Search City" />
+                <button type="button" className="btn btn--primary btn--inside uppercase">Change Location</button>
             </form>
         </div>
     </div>
